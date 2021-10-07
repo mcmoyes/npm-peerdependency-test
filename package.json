@@ -1,0 +1,11 @@
+{
+  "name": "npm-peerdependency-test",
+  "version": "1.0.0",
+  "description": "testing peer dependencies",
+  "author": "Mark Moyes",
+  "license": "ISC",
+  "dependencies": {
+    "pixi-spine": "~3.0.13",
+    "pixi.js-legacy": "6.1.2"
+  }
+}
