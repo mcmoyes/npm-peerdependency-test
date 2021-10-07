@@ -31,3 +31,24 @@ or
 ```
 yarn install
 ```
+
+## What's happening?
+
+![pixi js-legacy-pixi-spine](https://user-images.githubusercontent.com/22986822/136403127-419c1223-e49e-4a3b-8fec-11e0f7413f80.png)
+
+It's installing pixi-spine first, and we end up with
+
+```
+node_modules/@pixi/graphics v6.1.3
+node_modules/pixi.js-legacy/node_modules/@pixi/graphics v6.1.2
+```
+
+In `canvas-graphics.js`:
+```
+import { Graphics } from '@pixi/graphics';
+ 
+…
+ 
+Graphics.prototype.generateCanvasTexture = function generateCanvasTexture(scaleMode, resolution) {
+```
+`generateCanvasTexture` is being added to the wrong `Graphics` prototype.
